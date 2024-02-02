@@ -25,6 +25,7 @@ spot are colored orange. Wrong letters are darkened."""
 # Word length can be changed between 4 and 8 with a matching input file,
 # but the default length (5) is recommended.
 WORD_LENGTH = 5
+WORD_INPUT_FILE = "wordle_wordlist.txt"
 
 
 class Wordle:
@@ -278,12 +279,12 @@ class Wordle:
         self.__word_split = list(word)
         # Cheat sheet : print(word)
 
-    def read_file(self, filename="wordle_wordlist.txt"):
+    def read_file(self, filename = WORD_INPUT_FILE):
         """Create a list of possible words for the word being guessed from
         a text file. Errors are turned into pop-ups with func "error_popup()".
 
-        :param filename: str, name of the input file. Default is
-                         "wordle_wordlist.txt"."""
+        :param filename: str, name of the input file. Default value of
+                         WORD_INPUT_FILE is "wordle_wordlist.txt"."""
         # Empty the word list in case of words from a previous read attempt.
         self.__word_lst = []
         try:
